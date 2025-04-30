@@ -1,12 +1,55 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read, id) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.id = id;
+class Book {
+  constructor(title, author, pages, read, id) {
+    this._title = title;
+    this._author = author;
+    this._pages = pages;
+    this._read = read;
+    this._id = id;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(newTitle) {
+    this._title = newTitle;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  set author(newAuthor) {
+    this._author = newAuthor;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+
+  set pages(newPages) {
+    this._pages = newPages;
+  }
+
+  get read() {
+    return this._read;
+  }
+
+  set read(newReadStatus) {
+    this._read = newReadStatus;
+  }
+
+  get id() {
+    return this._id;
+  }
+
+  set id(newId) {
+    this._id = newId;
+  }
 }
+
 
 Book.prototype.toggleRead = function() {
     this.read = !this.read;
@@ -124,7 +167,7 @@ function addNewBook(){
     let bookRead = formData.get("read")
     if(bookRead == null ){
       bookRead = false
-    }else{
+    } else{
       bookRead = true
     }
   
